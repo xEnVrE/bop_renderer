@@ -1,3 +1,5 @@
+**This is an enhanced version of https://github.com/thodan/bop_renderer that supports per-vertex texture coordinates and enables rendering of textured meshes.**
+
 # BOP Renderer
 
 A simple C++ renderer with Python bindings utilized in the BOP Toolkit.
