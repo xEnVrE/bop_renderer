@@ -112,8 +112,8 @@ static string fragmentShaderPhongCode = \
 "      outColor[OA_COLORS] = vec4(color, 0.0);                              \n"\
 "                                                                           \n"\
 "      // Write texture                                                     \n"\
-"      outColor[OA_TEXTURED] = texture(                                     \n"\
-"        uTexture, vec2(vTexcoord.x, 1.0 - vTexcoord.y));                   \n"\
+"      outColor[OA_TEXTURED] = min(lightFactor * texture(                   \n"\
+"        uTexture, vec2(vTexcoord.x, 1.0 - vTexcoord.y)), 1.0);             \n"\
 "                                                                           \n"\
 "      // Write depth                                                       \n"\
 "      outColor[OA_DEPTH] = vec4(vDepth);                                   \n"\
@@ -168,8 +168,8 @@ static string fragmentShaderFlatCode = \
 "      outColor[OA_COLORS] = vec4(color, 0.0);                              \n"\
 "                                                                           \n"\
 "      // Write texture                                                     \n"\
-"      outColor[OA_TEXTURED] = texture(                                     \n"\
-"        uTexture, vec2(vTexcoord.x, 1.0 - vTexcoord.y));                   \n"\
+"      outColor[OA_TEXTURED] = min( lightWeight * texture(                  \n"\
+"        uTexture, vec2(vTexcoord.x, 1.0 - vTexcoord.y)), 1.0);             \n"\
 "                                                                           \n"\
 "      // Write depth                                                       \n"\
 "      outColor[OA_DEPTH] = vec4(vDepth);                                   \n"\
